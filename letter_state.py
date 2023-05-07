@@ -1,4 +1,3 @@
-
 class LetterState:
     def __init__(self, character: str):
         self.character: str = character
@@ -8,6 +7,7 @@ class LetterState:
     def __repr__(self):
         return f"[{self.character} is_in_word: {self.is_in_word} is_in_position: {self.is_in_position}]"
 
+
 class LetterState:
     def __init__(self, character: str):
         self.character: str = character
@@ -16,4 +16,3 @@ class LetterState:
 
     def __repr__(self):
         return f"[{self.character} is_in_word: {self.is_in_word} is_in_position: {self.is_in_position}]"
-

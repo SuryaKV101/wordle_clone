@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 about
 adieu
 other
@@ -2735,4 +2734,3 @@ ricky
 theta
 stake
 arbor
->>>>>>> origin/main

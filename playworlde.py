@@ -26,18 +26,20 @@ def main():
         '''
 
         wordle.attempt(x)
-        display_results(wordle)
+
+        if not wordle.is_solved:
+            display_attempts(wordle)
+
+        display_board(wordle)
 
     if wordle.is_solved:
-        print("You've solved the puzzle.")
+        print("\nYou've solved the puzzle!")
     else:
-        print("You failed to solve the puzzle!")
-        print(f"The secret word was: {wordle.secret}")
+        print("\nYou failed to solve the puzzle!")
+        print(f"The secret word was: { Fore.BLUE + wordle.secret + Fore.RESET}")
 
 
-def display_results(wordle: Wordle):
-    print(f"\nYou have {wordle.remaining_attempts} attempts left.\n")
-
+def display_board(wordle: Wordle):
     lines = []
 
     for word in wordle.attempts:
@@ -50,6 +52,10 @@ def display_results(wordle: Wordle):
         lines.append(" ".join(["_"] * wordle.WORD_LENGTH))
 
     draw_border_around(lines)
+
+
+def display_attempts(wordle: Wordle):
+    print(f"\nYou have {wordle.remaining_attempts} attempts left.")
 
 
 # asks for a string input
@@ -82,7 +88,7 @@ def draw_border_around(lines: List[str], size: int = 4, pad: int = 1):
     top_border = "┌" + ("─" * content_length) + "┐"
     bottom_border = "└" + ("─" * content_length) + "┘"
     space = " " * pad
-    print(top_border)
+    print(f"\n{top_border}")
 
     for line in lines:
         print("│" + space + line + space + "│")
