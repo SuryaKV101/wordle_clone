@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 from letter_state import LetterState
 from math import remainder
 
@@ -62,7 +62,6 @@ class Wordle:
     @property
     def can_attempt(self):
         return self.remaining_attempts > 0 and not self.is_solved
-=======
 from letter_state import LetterState
 from math import remainder
 
@@ -126,4 +125,4 @@ class Wordle:
     @property
     def can_attempt(self):
         return self.remaining_attempts > 0 and not self.is_solved
->>>>>>> origin/main
+
